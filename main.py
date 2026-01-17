@@ -22,7 +22,7 @@ def show_cars():
     tmp_cars = []
     for car in cars:
       # print(car)
-      if brand in car['brand']:
+     if brand.lower() in car['brand'].lower():
         tmp_cars.append(car)
     return render_template('cars/cars.html',
                          title='Show Cars by Brand Page',

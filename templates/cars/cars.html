@@ -9,7 +9,16 @@
     <h1>{{title}}</h1>
     <hr>
     <div class="row">
-      <div class="col"></div>
+      <div class="col">
+        <form method="post">
+          <div class="input-group mb-3">
+            <input name="brand" type="text" class="form-control" placeholder="Search by car's brand">
+            <button class="btn btn-outline-success" type="submit" >
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
       <div class="col">
         <a href="{{url_for('new_car')}}" class="btn btn-outline-success float-end">
           <i class="bi bi-car-front"></i> Add New Car
@@ -32,14 +41,13 @@
             <td>{{car.brand}}</td>
             <td>{{car.model}}</td>
             <td>
-              <a href="{{url_for('edit_car', id=car.id)}}" class="btn btn-outline-denger btn-sm">
-                <i class="bi bi-pencil-fill"></i> 
+              <a href="{{url_for('edit_car', id=car.id)}}" class="btn btn-outline-success btn-sm">
+                <i class="bi bi-pencil-square"></i>                
               </a>
-              <a href="{{url_for('delete_car', id=car.id)}}" class="btn btn-outline-denger btn-sm">
-                <i class="bi bi-trash-fill"></i>
+              <a href="{{url_for('delete_car', id=car.id)}}" class="btn btn-outline-danger btn-sm">
+                <i class="bi bi-x-circle"></i>                
               </a>
-                
-              
+            </td>
           </tr>
         {% endfor %}
         
